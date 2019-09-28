@@ -1,0 +1,40 @@
+# encoding: utf-8
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Box / OS
+VAGRANT_BOX = 'ubuntu/bionic64'
+
+# VM User — 'vagrant' by default
+VM_USER = 'vagrant'
+
+# Host folder to sync (Assumes repo in dir named GitHub)
+HOST_PATH = Pathname.new(Dir.pwd).parent.to_s
+
+# Where to sync to on Guest — 'vagrant' is the default user name
+GUEST_PATH = "/home/" + VM_USER + "/" + File.basename(HOST_PATH)
+
+#Set the Mb of Ram for each VM
+MEMORY = 1024
+
+Vagrant.configure(2) do |config|
+  # Vagrant box from Hashicorp
+  config.vm.box = VAGRANT_BOX
+
+  VM_NAME_1 = 'js-class-test'
+  VM_IP_1 = "172.28.128.18"
+  config.vm.define VM_NAME_1 do |vm_instance|
+    
+    vm_instance.vm.network "private_network", ip: VM_IP_1
+    vm_instance.vm.hostname = VM_NAME_1
+    vm_instance.vm.provider "virtualbox" do |v|
+      v.name = VM_NAME_1
+      v.memory = MEMORY
+    end
+    vm_instance.vm.synced_folder HOST_PATH, GUEST_PATH
+  end
+
+# Install Git, Node.js 12.x.x, Latest npm
+config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook.yml"
+end

@@ -1,0 +1,60 @@
+---
+- hosts: all
+  become: true
+  vars:
+    - swarm_address: js-class-test #You must configure the ip of the host in /etc/hosts prior to using this file
+    - webserver_image: mywebserver
+    - webserver_service: webserver
+    - webserver_replicas: 5
+    - webserver_port_external: 8080
+    - webserver_port_internal: 80
+    - network_name: web_class_network
+  tasks: 
+    - name: Install prerequisites
+      apt: 
+        name: ['python-pip', 'python-apt', 'git', 'ssh'] 
+        state: present
+    - name: Install docker
+      pip:
+        name: docker
+        state: present
+    - name: Install Docker apt Repository Key
+      apt_key:
+        url: "https://download.docker.com/linux/ubuntu/gpg"
+        state: present
+    - name: Install Docker apt Repository
+      apt_repository:
+        repo: "deb [arch=amd64] https:download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+        state: present
+    - name: Install Docker-ce
+      apt: 
+        name: docker-ce
+        update_cache: yes
+        state: present
+    - name: Upload the webserver image
+      synchronize:
+        src: ./
+        dest: /opt/mywebserver
+    - name: Build the webserver image
+      docker_image:
+        name: "{{webserver_image}}"
+        path: /opt/mywebserver
+    - name: Create the Docker Swarm
+      docker_swarm:
+        state: present
+        advertise_addr: 172.28.128.18
+    - name: Create the Swarm network
+      docker_network:
+        name: "{{network_name}}"
+        driver: overlay
+    - name: Create the webserver Service
+      docker_swarm_service:
+        name: "{{webserver_service}}"
+        networks: "{{network_name}}"
+        image: "{{webserver_image}}"
+        replicas: "{{webserver_replicas}}"
+        restart_config:
+          condition: on-failure
+        publish:
+          - published_port: "{{webserver_port_external}}"
+            target_port: "{{webserver_port_internal}}"
