@@ -1,0 +1,6 @@
+see if there is some way to keep the content from the etc and usr directories in sync with their own volumes
+remove the usr and etc direcories from the project and move to their own so 1 manages code and 1 manages infastructure
+add commands to playbook to establish the ssh handshake and passwordless connect to the vm from local
+get vagrant to use correct version of ansible for permissions
+
+desired behavior, vagrant up and vm is at correct ip with all code files mapped from the code repo to the vm and displaying when the private host is accessed
