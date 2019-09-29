@@ -58,3 +58,10 @@
         publish:
           - published_port: "{{webserver_port_external}}"
             target_port: "{{webserver_port_internal}}"
+        mounts:
+          - type: bind
+            source: /home/vagrant/web-dev-course/etc/nginx/conf.d
+            target: /etc/nginx/conf.d
+          - type: bind
+            source: /home/vagrant/web-dev-course/usr/share/www/html
+            target: /usr/share/www/html

@@ -6,5 +6,3 @@ ARG PASSWORD=pass
 # docker buil d-t --build-arg PASSWORD=pass123 .
 RUN printf "bob:$(openssl passwd -1 ${PASSWORD})\n" >> ${WWW_PATH}/.htpasswd
 RUN rm /etc/nginx/conf.d/default.conf
-COPY etc/nginx/conf.d/main.conf /etc/nginx/conf.d/
-COPY usr/share/www/html /usr/share/www/html/
