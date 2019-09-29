@@ -34,7 +34,8 @@ Vagrant.configure(2) do |config|
     vm_instance.vm.synced_folder HOST_PATH, GUEST_PATH
   end
 
-# Install Git, Node.js 12.x.x, Latest npm
-config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "playbook.yml"
+  # Install Git, Node.js 12.x.x, Latest npm
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "../playbook.yml"
+  end
 end
