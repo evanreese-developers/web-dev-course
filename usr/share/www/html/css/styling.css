@@ -1,0 +1,13 @@
+#container{
+    width: 1050px;
+    border: 1px solid gray;
+    height: 100px;
+    margin: 0 auto;
+}
+
+h1 a{
+    font-size: 50px;
+    font-weight: 100;
+    color: #9434C7;
+    text-decoration: none;
+}
