@@ -1,6 +1,6 @@
 #container{
     width: 1050px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     margin: 0 auto;
 }
 
@@ -83,10 +83,44 @@ ul{
     -moz-transition: font-size .3s ease;
     -o-transition: font-size .3s ease;
     -ms-transition: font-size .3s ease;
+    transition: font-size .3s ease;
 }
 
 #menu ul li a:hover, #menu ul li a.active{
     font-size: 20px;
     font-weight: bold;
     color: #B314DB;
+}
+
+#introduction{
+    background: linear-gradient(#E5F2BB, #B7E952);
+    padding: 30px;
+    margin: 16px 0px;
+}
+
+#introduction h3{
+    font-size: 45px;
+    color: #316901;
+    font-weight: normal;
+}
+
+#introduction p{
+    font-size: 25px;
+    color: #628F19;
+    text-align: justify;
+}
+
+.sidebar{
+    height: 500px;
+    width: 400px;
+    border: 1px solid #BAF46F;
+    border-radius: 20px;
+}
+
+#leftsidebar{
+    float: left;
+}
+
+#rightsidebar{
+    float: right;
 }
