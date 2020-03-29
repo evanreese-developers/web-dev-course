@@ -12,7 +12,7 @@
   tasks: 
     - name: Install prerequisites
       apt: 
-        name: ['python-pip', 'python-apt', 'git', 'ssh'] 
+        name: ['python-pip', 'python3-pip', 'python-apt', 'git', 'ssh'] 
         state: present
     - name: Install docker
       pip:

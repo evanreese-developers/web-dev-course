@@ -1,4 +1,6 @@
 vagrant/.vagrant/**
+vagrant/.vagrant/*
+./vagrant/.vagrant/**
 /vagrant/*.log
 *.log
 vagrant/ubuntu-bionic-18.04-cloudimg-console.log
