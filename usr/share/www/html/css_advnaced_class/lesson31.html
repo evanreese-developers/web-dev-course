@@ -6,9 +6,30 @@
     <title>Flexbox - Container Properties</title>
     <style>
         .container {
+          height: 700px;
           margin-top: 50px;
-          padding: 20px 0;
+          /* padding: 20px 0; */
           background-color: #f19861;  
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          /* flex-flow: row wrap; */
+          justify-content: space-around;
+          align-items: flex-start;
+          align-content: flex-start;
+        }
+
+        .item {
+            padding: 30px;
+            margin: 10px;
+            background-color: #06af8f;
+            text-align: center;
+            font-size: 30px;
+            color: white;
+        }
+
+        .item-1 {
+            /* font-size: 70px; */
         }
     </style>
 </head>
