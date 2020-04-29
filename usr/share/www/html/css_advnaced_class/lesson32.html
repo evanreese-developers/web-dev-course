@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox - Container Properties</title>
+    <title>Flexbox - Container Properties - Items</title>
     <style>
         .container {
           height: 700px;
@@ -16,7 +16,7 @@
           /* flex-flow: row wrap; */
           justify-content: space-around;
           align-items: flex-start;
-          align-content: space-evenly;
+          /* align-content: space-evenly; */
         }
 
         .item {
@@ -29,8 +29,20 @@
         }
 
         .item-1 {
+            width: 200px;
             /* font-size: 70px; */
+            order: 1;
+            /* flex-grow: 5; */
+        }
 
+        .item-5 {
+            width: 200px;
+            order: -1;
+            /* align-self: stretch; */
+            /* flex-grow: 1; */
+            /* flex-shrink: 0; */
+            /* flex-basis: 100px; */
+            flex: 0 1 auto;
         }
     </style>
 </head>
