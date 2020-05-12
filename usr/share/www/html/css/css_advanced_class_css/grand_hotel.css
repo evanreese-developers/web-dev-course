@@ -19,6 +19,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    z-index: 10;
 }
 
 .menu-icon {
@@ -35,7 +36,7 @@ body {
 
 .line-1, .line-3 {
     width: 1.8rem;
-    transition: width .3s;
+    transition: all .4s;
 
 }
 
@@ -72,8 +73,8 @@ body {
 
 /* navigation */
 .navigation {
-    margin-left: 8rem;
     position: fixed;
+    left: -32rem;
     width: 40rem;
     height: 100%;
     background: linear-gradient(to top, rgba(34,32,41,1), rgba(34,32,41,.8)), url(../../img/nav-bg.jpeg) center no-repeat;
@@ -82,6 +83,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    transition: left .8s cubic-bezier(1,0,0,1);
 }
 
 .navigation-heading {
@@ -128,6 +130,85 @@ body {
 
 .navigation-search-btn:focus {
     outline: none;
+}
+
+.navigation-list {
+    list-style: none;
+    padding: 0;
+    height: 28rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-item {
+    position: relative;
+}
+
+.navigation-link {
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color .5s;
+}
+
+.navigation-link:before {
+    content: "";
+    width: 0rem;
+    height: .1rem;
+    background-color: #deaa86;
+    position: absolute;
+    top: 1rem;
+    left: -4rem;
+    transition: width .5s cubic-bezier(1,0,0,1);
+}
+
+.navigation-link:after {
+    content: "";
+    width: 0rem;
+    height: .1rem;
+    background-color: #deaa86;
+    position: absolute;
+    top: 1rem;
+    right: -4rem;
+    transition: width .5s cubic-bezier(1,0,0,1);
+}
+
+.navigation-link:hover {
+    color: #deaa86;
+}
+
+.navigation-link:hover::before, 
+.navigation-link:hover::after {
+    width: 3rem;
+}
+
+.copyright {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox:checked ~ .navigation{
+    left: 8rem;
+}
+
+.checkbox:checked ~ .sidebar .line-1 {
+    transform: rotate(-405deg) translate(-5px, 6px);
+    width: 2.5rem;
+}
+
+.checkbox:checked ~ .sidebar .line-2 {
+    opacity: 0;
+}
+
+.checkbox:checked ~ .sidebar .line-3 {
+    transform: rotate(405deg) translate(-5px, -6px);
+    width: 2.5rem;
 }
 /* end of navigation */
 /* end of navbar */
