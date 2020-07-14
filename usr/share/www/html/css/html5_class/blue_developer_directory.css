@@ -1,0 +1,197 @@
+* {
+    margin: 0 auto 0 auto;
+    text-align: left;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    background-color: #1c478e;
+    background-image: url(../../img/html5_class/background.png);
+    background-repeat: repeat-x;
+}
+
+a {
+    text-decoration: none;
+}
+
+table, tr, td, th {
+    margin: 0;
+}
+
+table {
+    padding: 10px 0;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    padding: 5px 20px;
+}
+
+h2 {
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 0;   
+    color: #054dbc;
+}
+
+h4 {
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 7px;
+    color: #054dbc;
+}
+
+p {
+    margin: 10px 0;
+}
+
+label {
+    display: inline-block;
+}
+
+#container {
+    width: 960px;
+}
+
+#header {
+    width: 960px;
+    height: 85px;
+}
+
+#header h1 {
+    float: left;
+    color: #fff;
+    font-size: 43px;
+    padding: 20px 0 0 20px;
+}
+
+#header h2 {
+    float: right;
+    color: #A9D1FA;
+    padding: 40px 20px 0 0;
+}
+
+#header h1 span.blue-text {
+    color: #67A0F5;
+}
+
+#header h2 span.white-text {
+    color: #fff;
+}
+
+#menu {
+    display: block;
+    float: left;
+    clear: both;
+    width: 960px;
+    height: 54px;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    padding-top: 18px;
+    margin-left: auto;
+    width: 960px;
+}
+
+#menu li {
+    list-style: none;
+    padding: 0;
+    display: inline;
+}
+
+#menu li a, #menu li a:visited {
+    float: left;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 13px 0 10px;
+}
+
+#leftmenu {
+    margin-top: 15px;
+    width: 190px;
+    float: left;
+    background-color: #1C478E;
+    border-radius: 10px;
+    padding: 15px 20px 10px 10px;
+}
+
+#leftmenu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#leftmenu li {
+    list-style: none;
+    padding: 15px 0 8px 0;
+    border-bottom: 1px dashed #fff;
+}
+
+#leftmenu li a, #leftmenu li a:visited {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#leftmenu h3 {
+    color: #fff;
+    padding: 0;
+    padding-bottom: 8px;
+    border-bottom: #fff solid 2px;
+    font-size: 16px;
+}
+
+#content {
+    display: block;
+    width: 680px;
+    margin-top: 15px;
+    float: left;
+    background-color: #fff;   
+    border-radius: 10px;
+    border: 6px solid #1C478E;
+    padding: 15px;
+    margin-left: 15px;
+}
+
+.float {
+    float: right;
+    margin: 15px;
+}
+
+.developer {
+    width: 170px;
+    float: right;
+}
+
+.developer ul {
+    margin-bottom: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.developer li {
+    list-style: none;
+    line-height: 1.7em;
+}
+
+table.boston-developers-tbl table.boston-developers-tbl tr, table.boston-developers-tbl td, table.boston-developers-tbl th, table.new-hampshire-developers-tbl table.new-hampshire-developers-tbl tr, table.new-hampshire-developers-tbl td, table.new-hampshire-developers-tbl th{
+    font-size: 110%;
+    border-bottom: 1px dashed #000;
+}
